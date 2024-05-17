@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: font-weight 1s ease;
+}
+
+a:hover {
+    font-weight: 1000;
+    color: #ffffff;
+}
+
+/* start header */
+header {
+    position: fixed;
+    top:0; left:0; right:0;  
+    background: transparent;
+    padding:1rem 9%;  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+    z-index: 1000;
+    background-color: #006215;
+}
+
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar .links a {
+    color: #ffffff;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .links a:hover {
+    color: #ffffff;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn {
+    background-color: #006215;
+    color: #ffffff;
+    padding: 0.3rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    font-size: 1.1rem;
+}
+
+.action_btn:hover {
+    scale: 0.95;
+    background-color: #006215;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+/* end header */
+
+
+/* start dropdown */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 70px;
+    height: 0;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn  {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-wdith: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+/* end dropdown */
+
+
+
+
+
+
+.start {
+    margin-top: 4rem;
+    padding: 2rem 9%;
+    height: 250vh;
+    background: url('Y\ front\ page.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    text-align: center;
+    background-color: #006215;
+    color: white;
+    padding: 1em 0;
+}
+
+.gallery {
+    margin: 3rem;
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.item {
+    text-align: center;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.item:hover {
+    color: #006215; 
+}
+
+.item img {
+    width: 200px;
+    height: 250PX;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+
+}
+.item p {
+    margin: 10px;
+    font-size: large;
+    font-weight: 900;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+    box-shadow: #006215 0 0 12px;
+}
+
+.details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #006215;
+    padding: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    box-shadow: #000000 0 0 12px;
+    width: 300px;
+}
+
+.details img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+.details h2 {
+    font-size: large;
+}
+.details h6 {
+    font-size: small;
+    font-weight: 400;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 30px;
+    cursor: pointer;
+}

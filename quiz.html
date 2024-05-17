@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Menu</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="quiz.html">Mang Enfrens Restaurant</a></div>
+            <ul class="links">
+                <li><a href="quiz.html">Home</a></li>
+                <li><a href="#Menu">Menu</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown_menu">
+            <ul class="links">
+                <li><a href="quiz.html">Home</a></li>
+                <li><a href="#Menu">Menu</a></li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+            
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+
+        const logoutBtn = document.querySelector('.action_btn')
+        logoutBtn.onclick = function() {
+        window.location.href = "login.html"
+        }
+    </script>
+
+
+    <main>
+        <div class="start">
+        </div>
+        <div class="header">
+            <h1 id="Menu">Our Menu</h1>
+        </div>
+        <div class="gallery">
+            <div class="item" onclick="showDetails('item1')" >
+                <img src="y1.png" alt="y1">
+                <p>Yes with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item2')">
+                <img src="y2.png" alt="Item 2">
+                <p>Yes na Yes with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item3')" >
+                <img src="y3.png" alt="y3">
+                <p>Yes + Hotdog with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item4')" >
+                <img src="y4.png" alt="y4">
+                <p>Yes + Tenga with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item5')" >
+                <img src="y5.png" alt="y5">
+                <p>Yes + Isaw Baboy with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item6')" >
+                <img src="y6.png" alt="y6">
+                <p>Yes + Isaw Manok with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item7')" >
+                <img src="y7.png" alt="y7">
+                <p>Yes with Friends</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item8')" >
+                <img src="y8.png" alt="y8">
+                <p>Inihaw na Liempo with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item9')" >
+                <img src="y9.png" alt="y9">
+                <p>Chicken BBQ (Leg Quarter) with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item10')" >
+                <img src="y10.png" alt="y10">
+                <p>Inihaw na Prokchop with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item11')" >
+                <img src="y11.png" alt="y11">
+                <p>Yes + Isaw Bilog with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+            <div class="item" onclick="showDetails('item12')" >
+                <img src="y12.png" alt="y12">
+                <p>Yes + Bulaklak with Java Rice</p>
+                <h7>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h7>
+            </div>
+        </div>
+        <div id="details" class="details">
+            <span class="close" onclick="hideDetails()">&times;</span>
+            <img id="detailImage" src="" alt="">
+            <h2 id="detailName"></h2>
+            <p id="detailPrice"></p>
+            <h6>Elevate your meal game with our delicious combo meals, starring our famous Java rice!</h6>
+        </div>
+    </main>
+    <script>
+        const details = document.getElementById('details');
+        const detailImage = document.getElementById('detailImage');
+        const detailName = document.getElementById('detailName');
+        const detailPrice = document.getElementById('detailPrice');
+
+    const items = {
+        item1: { 
+            src: 'y1.png', 
+            name: 'Y1', 
+            price: 'P95' 
+        },
+        item2: { 
+            src: 'y2.png', 
+            name: 'Y2', 
+            price: 'P139' 
+        },
+        item3: { 
+            src: 'y3.png', 
+            name: 'Y3', 
+            price: 'P129' 
+        },
+        item4: { 
+            src: 'y4.png', 
+            name: 'Y4', 
+            price: 'P129' 
+        },
+        item5: { 
+            src: 'y5.png', 
+            name: 'Y5', 
+            price: 'P129' 
+        },
+        item6: { 
+            src: 'y6.png', 
+            name: 'Y6', 
+            price: 'P129' 
+        },
+        item7: { 
+            src: 'y7.png', 
+            name: 'Y7', 
+            price: 'P235' 
+        },
+        item8: { 
+            src: 'y8.png', 
+            name: 'Y8', 
+            price: 'P229' 
+        },
+        item9: { 
+            src: 'y9.png', 
+            name: 'Y9', 
+            price: 'P175' 
+        },
+        item10: { 
+            src: 'y10.png', 
+            name: 'Y10', 
+            price: 'P125' 
+        },
+        item11: { 
+            src: 'y11.png', 
+            name: 'Y11', 
+            price: 'P135' 
+        },
+        item12: { 
+            src: 'y12.png', 
+            name: 'Y12', 
+            price: 'P129' 
+        }
+
+    };
+
+    function showDetails(itemId) {
+    const item = items[itemId];
+    detailImage.src = item.src;
+    detailName.textContent = item.name;
+    detailPrice.textContent = item.price;
+    details.style.display = 'block';
+    }
+
+    function hideDetails() {
+    details.style.display = 'none';
+    }
+
+    </script>
+</body>
+</html>
